@@ -1,4 +1,4 @@
-# A Closer Look at Linguistic Knowledge in Masked Language Models:The Case of Relative Clauses in American English
+# A Closer Look at Linguistic Knowledge in Masked Language Models: The Case of Relative Clauses in American English
 
 ### Marius Mosbach*, Stefania Degaetano-Ortlieb*, Marie-Pauline Krielke, Badr M. Abdullah, Dietrich Klakow
 ##### Department of Language Science and Technology, Saarland University 
