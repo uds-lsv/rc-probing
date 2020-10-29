@@ -3,7 +3,7 @@
 ### Marius Mosbach*, Stefania Degaetano-Ortlieb*, Marie-Pauline Krielke, Badr M. Abdullah, Dietrich Klakow
 ##### Department of Language Science and Technology, Saarland University 
 
-This repository contains code for the [COLING 2020](https://coling2020.org/) paper [A Closer Look at Linguistic Knowledge in Masked Language Models:The Case of Relative Clauses in American English].
+This repository contains code for the [COLING 2020](https://coling2020.org/) paper [A Closer Look at Linguistic Knowledge in Masked Language Models:The Case of Relative Clauses in American English]().
 
 ## Abstract
 
