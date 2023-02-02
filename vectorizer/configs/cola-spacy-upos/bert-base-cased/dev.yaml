@@ -1,0 +1,33 @@
+input:
+  dataset: cola-spacy-upos
+  input_dir: /datasets/GLUE/cola/spacy-annotated
+  input_file_name: dev.tsv
+  task_type: token-level # sequence-level or token-level
+  token_level_label_mode: first # leave empty for sequence-level tasks {first, all, average} [teacher, ##s]
+  labels_file_name: spacy_upos_labels.txt # leave empty for sequence-level tasks or if labels are hardcoded
+  max_length: 128
+  batch_size: 100
+
+model:
+  model_type: bert
+  model_name_or_path: bert-base-cased # Path to pre-trained model or shortcut name of huggingface transformer models
+  config_name: # leave empty if the same name or dir path as model_name
+  tokenizer_name: # leave empty if the same name or dir path as model_name
+  do_lower_case: false
+  cache_dir: /pre-trained-transformers
+  layer: 0 # get's overwritten by args.layer if specified
+  pooler: # get's overwritten by args.pooler if specified, leave empty for token-level tasks
+
+vectorizer:
+  enable: true
+  embeddings_dir: /datasets/GLUE/cola/spacy-annotated/embeddings/token-level/bert-base-cased
+
+indexer:
+  enable: false
+  index_dir:
+  min_freq: 5
+
+labels:
+  enable: true
+  labels_dir: /datasets/GLUE/cola/spacy-annotated/embeddings/token-level/bert-base-cased/labels # token-level labels are tokenizer specific
+  masks_dir: /datasets/GLUE/cola/spacy-annotated/embeddings/token-level/bert-base-cased/labels # token-level masks are tokenizer specific

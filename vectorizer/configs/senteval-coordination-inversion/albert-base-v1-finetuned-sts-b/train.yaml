@@ -1,0 +1,33 @@
+input:
+  dataset: senteval-coordination-inversion
+  input_dir: /datasets/probing/senteval-coordination-inversion
+  input_file_name: train.tsv
+  task_type: sequence-level # sequence-level or token-level
+  token_level_label_mode: # leave empty for sequence-level tasks {first, all, average} [teacher, ##s]
+  labels_file_name: # leave empty for sequence-level tasks
+  max_length: 128
+  batch_size: 100
+
+model:
+  model_type: albert-finetuned
+  model_name_or_path: /checkpoints/sts-b/Apr03_12-31-29_albert-base-v1_warmup-constant # Path to pre-trained model or shortcut name of huggingface transformer models
+  config_name: # leave empty if the same name or dir path as model_name
+  tokenizer_name: # leave empty if the same name or dir path as model_name
+  do_lower_case: true
+  cache_dir: /pre-trained-transformers
+  layer: 0 # get's overwritten by args.layer if specified
+  pooler: cls # get's overwritten by args.layer if specified
+
+vectorizer:
+  enable: true
+  embeddings_dir: /datasets/probing/senteval-coordination-inversion/embeddings/sentence-embeddings/albert-base-v1-finetuned-sts-b
+
+indexer:
+  enable: false
+  index_dir:
+  min_freq: 5
+
+labels:
+  enable: true
+  labels_dir: /datasets/probing/senteval-coordination-inversion/embeddings/sentence-embeddings/labels
+  masks_dir: # save attention mask token-level tasks
